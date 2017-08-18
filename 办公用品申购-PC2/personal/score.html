@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>评分</title>
+
+    <!-- Bootstrap -->
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/screen.css" rel="stylesheet">
+    <link href="../css/star-rating.min.css" media="all" rel="stylesheet" type="text/css" />
+
+    <!--[if lt IE 9]>
+      <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+<style>
+td .star {display: inline-block;}
+td .starNum {
+    display: inline-block;
+    font-weight: bold;
+    color: #d9534f;
+    margin-left: 10px;
+    width: 20px;
+}
+</style>
+
+</head>
+  <body class="home-template">
+    <header class="main-header">
+      <div class="container">
+        <div class="row">
+          <div class="col-xs-12">
+            <h1>办公用品申购/评分</h1>
+            <a class="btn btn-primary" href="../login.html"><i class="glyphicon glyphicon-user"></i>登录</a>
+            <a class="btn btn-primary" herf="javascript:;"><i class="glyphicon glyphicon-globe"></i>退出</a>
+          </div>
+
+        </div>
+      </div>
+    </header>
+
+    <nav class="navbar my-navbar main-navigation" role="navigation">
+        <div class="container-fluid">
+            <div class="navbar-default navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-menu">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">菜单</a>
+            </div>
+            <div class="collapse navbar-collapse" id="main-menu">
+              <ul class="menu">
+                <li role="presentation"><a href="../index.html" title=" ">申请购买 </a></li>
+                <li role="presentation"><a href="./shopList.html" title=" ">申请清单 </a></li>
+                <li role="presentation" class="active"><a href="./score.html" title=" ">评分 </a></li>
+                <li role="presentation"> | </li>
+                <li role="presentation"><a href="../manager/setUp.html" title=" ">商品管理 </a></li>
+                <li role="presentation"><a href="../manager/shopList.html" title=" ">清单查看 </a></li>
+                <li role="presentation"><a href="../manager/scoreCheck.html" title=" ">评分查看 </a></li>
+                <li role="presentation"><a href="../manager/account.html" title=" ">账户管理 </a></li>
+              </ul>
+            </div>
+        </div>
+    </nav>
+
+    <section class="content-wrap">
+      <div class="container">
+      	<div class="row">
+          <div class="col-md-9 main-content contentRight">
+            <div class="panel panel-default">
+              <!-- 选择评分年份 -->
+              <div class="panel-heading">
+                <div style="display:inline-block"><strong>2017</strong>年评分</div>
+                <div class="form-inline pull-right">
+                  <div class="input-group pickYear" style="margin-top: -5px;">
+                    <input type="text" class="form-control" aria-label="Text input with segmented button dropdown" value="2017">
+                    <div class="input-group-btn">
+                      <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <span class="caret"></span>
+                        <span class="sr-only">下拉选择年份</span>
+                      </button>
+                      <ul class="dropdown-menu dropdown-menu-right">
+                        <li><a href="#">2010</a></li>
+                        <li><a href="#">2011</a></li>
+                        <li><a href="#">2012</a></li>
+                        <li><a href="#">2013</a></li>
+                        <li><a href="#">2014</a></li>
+                        <li><a href="#">2015</a></li>
+                        <li><a href="#">2016</a></li>
+                        <li><a href="#">2017</a></li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="panel-body">
+                <button id="myAlert" type="button" class="btn btn-primary pull-right TJ"><i class="glyphicon glyphicon-ok"></i>提交</button>
+              </div>
+              <table class="table  table-striped table-hover">
+                  <thead class="bg-primary">
+                    <tr>
+                      <th>
+                        <label>
+                          <input type="checkbox">
+                        </label>
+                      </th>
+                      <th>姓名</th>
+                      <th>评分</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>
+                        <label>
+                          <input type="checkbox">
+                        </label>
+                      </td>
+                      <td>徐天</td>
+                      <td>
+                          <div class="star"></div>
+                          <div class="starNum"></div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <label>
+                          <input type="checkbox">
+                        </label>
+                      </td>
+                      <td>五佩玲</td>
+                      <td>
+                          <div class="star"></div>
+                          <div class="starNum"></div>
+                      </td>
+                    </tr>
+                  </tbody>
+              </table>
+              <div class="panel-footer">
+                <!-- <i class="pull-left">更新时间：2017-08-16 15:33</i> -->
+                <ul class="pagination">
+                    <li>
+                      <a href="#" aria-label="Previous">
+                        <span aria-hidden="true">&laquo;</span>
+                      </a>
+                    </li>
+                    <li><a href="#">1</a></li>
+                    <li><a href="#">2</a></li>
+                    <li><a href="#">3</a></li>
+                    <li><a href="#">4</a></li>
+                    <li><a href="#">5</a></li>
+                    <li>
+                      <a href="#" aria-label="Next">
+                        <span aria-hidden="true">&raquo;</span>
+                      </a>
+                    </li>
+                  </ul>
+              </div>
+            </div>
+          </div>
+          <aside class="col-md-3 sidebar">
+        		<div class="widget">
+        			<h4 class="title"><i class="glyphicon glyphicon-star text-primary"></i>我的评分</h4>
+        			<div class="content">
+                <div class="row">
+                  个人评分 100分 共30人参与
+                </div>
+                <div class="row">
+                  您已评价30人（共50人）
+                </div>
+        			</div>
+        		</div>
+      		</aside>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/jquery.raty.js" type="text/javascript"></script>
+    <script src="../js/dialog.js" charset="utf-8"></script>
+    <script type="text/javascript">
+      var model = new Modal({
+        title: '提示',
+        content: '确认提交',
+        width: 600,
+        buttons: [{
+                html: '<button type="button" class="btn btn-primary btn-ok">确定</button>',
+                selector: '.btn-ok',
+                callback: function(){
+                    //点击确定按钮的回调
+                    Alert({
+                         msg: '提交成功！',
+                         onOk: function(){
+
+                         }
+                     });
+                }
+            },{
+              html: '<button type="button" class="btn btn-default btn-cancel">取消</button>',
+              selector: '.btn-cancel',
+              callback: function(){
+                  //点击确定按钮的回调
+              }
+            }]
+      });
+
+      $(".TJ").click(function(){
+        model.open();
+      })
+
+      $('.star').raty({
+          half: true,
+          path: '../images',
+          size     : 24,
+          starHalf : 'star-half-big.png',
+          starOff  : 'star-off-big.png',
+          starOn   : 'star-on-big.png',
+          number : 10,
+          space : false,
+          click: function(score) {
+            var theNum = $(this).siblings(".starNum");
+            if(score<=0){
+              theNum.text("0");
+            }else {
+              theNum.text(score);
+            }
+           }
+        });
+        $(".starNum").text("0");
+        $(".pickYear .dropdown-toggle").on("click",function(){
+        var menu = $(".pickYear .dropdown-menu");
+        if(menu.height()>250){
+          menu.css({"height":250,"overflow-y":"scroll","overflow-x":"hidden"})
+        }else{}
+        $(".pickYear .dropdown-menu li").each(function(){
+          $(this).click(function(){
+
+            var years = $(this).find("a").text();
+              // alert(years);
+            $(".pickYear .form-control").val(years);
+            $(".panel-heading div strong").text(years);
+          })
+        })
+      })
+    </script>
+  </body>
+</html>

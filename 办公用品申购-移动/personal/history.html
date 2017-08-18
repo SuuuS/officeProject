@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title>历史购货记录</title>
+		
+		<link rel="stylesheet" href="../css/mui.min.css" />
+		<link rel="stylesheet" href="../css/common.css" />
+		<link rel="stylesheet" href="../css/mui.picker.min.css" />
+		<style>
+			html,
+			body {
+				height: 100%;
+				overflow: hidden;
+			}
+			.mui-bar {
+				-webkit-box-shadow: none;
+				box-shadow: none;
+			}
+			.mui-table-view-cell h4 {font-size: 16px;}
+			.mui-content {background: none;}	
+			.mui-card-content-inner {padding: 0;} 
+			.mui-card-footer {
+				    background-color:#fbfaf5;
+					-webkitbackground-image:linear-gradient(45deg,rgba(242, 89, 83, .3) 12.5%,#fbfaf5 12.5%,#fbfaf5 25%,rgba(85,144,214,.3) 25%,rgba(85,144,214,.3) 37.5%,#fbfaf5 37.5%,#fbfaf5 50%,rgba(242,89,83,.3) 50%,rgba(242,89,83,.3) 62.5%,#fbfaf5 62.5%,#fbfaf5 75%,rgba(85,144,214,.3) 75%,rgba(85,144,214,.3) 87.5%,#fbfaf5 87.5%,#fbfaf5 100%);
+					background-image:linear-gradient(45deg,rgba(242, 89, 83, .3) 12.5%,#fbfaf5 12.5%,#fbfaf5 25%,rgba(85,144,214,.3) 25%,rgba(85,144,214,.3) 37.5%,#fbfaf5 37.5%,#fbfaf5 50%,rgba(242,89,83,.3) 50%,rgba(242,89,83,.3) 62.5%,#fbfaf5 62.5%,#fbfaf5 75%,rgba(85,144,214,.3) 75%,rgba(85,144,214,.3) 87.5%,#fbfaf5 87.5%,#fbfaf5 100%);
+			}	
+			.mui-card-footer p {color: #3f3f3f;}
+			.mui-card-footer a {font-weight: bold;}	
+		</style>
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<h1 id='result' class="mui-title btn" data-options='{"type":"month"}' />选择日期</h1>
+		</header>
+		<div class="mui-content">
+			<div class="mui-card">
+				<div class="mui-card-header">2017-06-01</div>
+				<div class="mui-card-content">
+					<div class="mui-card-content-inner">
+						<ul class="mui-table-view">
+						<li data-value="" data-tags="" class="mui-table-view-cell mui-indexed-list-item">
+							<div class="mui-table">
+								<div class="mui-table-cell mui-col-sm-10">
+									<span>北京铅笔 2B</span>
+								</div>
+								<div class="mui-table-cell mui-col-sm-2 mui-text-right">
+									<b>×3</b>
+								</div>
+							</div>							
+						</li>
+						<li data-value="" data-tags="" class="mui-table-view-cell mui-indexed-list-item">
+							<div class="mui-table">
+								<div class="mui-table-cell mui-col-sm-10">
+									<span>打孔夹 3英寸</span>
+								</div>
+								<div class="mui-table-cell mui-col-sm-2 mui-text-right">
+									<b>×2</b>
+								</div>
+							</div>							
+						</li>						
+					</ul>
+					</div>
+				</div>
+				<div class="mui-card-footer">
+					<button class="mui-btn mui-btn-blue mui-icon mui-icon-checkmarkempty oDone">确认领取</button>
+					<p>共计<b>239.00</b>元</p>
+				</div>
+			</div>		
+		
+			<div class="mui-card">
+				<div class="mui-card-header">2017-06-01</div>
+				<div class="mui-card-content">
+					<div class="mui-card-content-inner">
+						<ul class="mui-table-view">
+							<li data-value="" data-tags="" class="mui-table-view-cell mui-indexed-list-item">
+								<div class="mui-table">
+									<div class="mui-table-cell mui-col-sm-10">
+										<span>北京铅笔 2B</span>
+									</div>
+									<div class="mui-table-cell mui-col-sm-2 mui-text-right">
+										<b>×3</b>
+									</div>
+								</div>							
+							</li>
+							<li data-value="" data-tags="" class="mui-table-view-cell mui-indexed-list-item">
+								<div class="mui-table">
+									<div class="mui-table-cell mui-col-sm-10">
+										<span>打孔夹 3英寸</span>
+									</div>
+									<div class="mui-table-cell mui-col-sm-2 mui-text-right">
+										<b>×2</b>
+									</div>
+								</div>							
+							</li>
+							<li data-value="" data-tags="" class="mui-table-view-cell mui-indexed-list-item">
+								<div class="mui-table">
+									<div class="mui-table-cell mui-col-sm-10">
+										<span>单页夹 （L透明）</span>
+									</div>
+									<div class="mui-table-cell mui-col-sm-2 mui-text-right">
+										<b>×5</b>
+									</div>
+								</div>							
+							</li>
+						</ul>
+					</div>
+				</div>
+				<div class="mui-card-footer">
+					<p>已领取</p>					
+					<p>共计<b>354.00</b>元</p>
+				</div>
+			</div>
+		</div>
+		<script src="../js/mui.min.js"></script>
+		<script src="../js/mui.picker.min.js" ></script>
+		
+		<script type="text/javascript" charset="utf-8">
+			(function($) {
+				$.init();
+				$(".mui-card-footer").on("tap",".oDone",function(){
+					var btnArray = ['是', '否'];
+					$.confirm('确认领取？', '提示', btnArray, function(e) {
+						if (e.index == 0) {
+							mui.toast('确认成功');
+						} else {
+//							info.innerText = 'MUI没有得到你的认可，继续加油'
+						}
+					})
+				})
+				var result = $('#result')[0];
+				var btns = $('.btn');
+				btns.each(function(i, btn) {
+					btn.addEventListener('tap', function() {
+						var optionsJson = this.getAttribute('data-options') || '{}';
+						var options = JSON.parse(optionsJson);
+						var id = this.getAttribute('id');
+						/*
+						 * 首次显示时实例化组件
+						 * 示例为了简洁，将 options 放在了按钮的 dom 上
+						 * 也可以直接通过代码声明 optinos 用于实例化 DtPicker
+						 */
+						var picker = new $.DtPicker(options);
+						picker.show(function(rs) {
+							/*
+							 * rs.value 拼合后的 value
+							 * rs.text 拼合后的 text
+							 * rs.y 年，可以通过 rs.y.vaue 和 rs.y.text 获取值和文本
+							 * rs.m 月，用法同年
+							 * rs.d 日，用法同年
+							 * rs.h 时，用法同年
+							 * rs.i 分（minutes 的第二个字母），用法同年
+							 */
+							result.innerText = '日期: ' + rs.text;
+							/* 
+							 * 返回 false 可以阻止选择框的关闭
+							 * return false;
+							 */
+							/*
+							 * 释放组件资源，释放后将将不能再操作组件
+							 * 通常情况下，不需要示放组件，new DtPicker(options) 后，可以一直使用。
+							 * 当前示例，因为内容较多，如不进行资原释放，在某些设备上会较慢。
+							 * 所以每次用完便立即调用 dispose 进行释放，下次用时再创建新实例。
+							 */
+							picker.dispose();
+						});
+					}, false);
+				});
+			})(mui);
+		
+		</script>
+	</body>
+
+</html>

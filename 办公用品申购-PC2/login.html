@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+    <title>Bootstrap 101 Template</title>
+
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!--[if lt IE 9]>
+      <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+<style>
+.login {
+    background: url('images/loginBg.png') #82aed2;
+    background-size: initial;
+    background-repeat: no-repeat;
+}
+.container {
+  background: rgba(56, 104, 144, 0.8);
+  margin-top: 10%;
+  padding: 30px;
+  border-radius: 15px;
+  color: #fff;
+}
+i.glyphicon{
+  margin-right: 10px;
+}
+.loginIcon {text-align: center;}
+.loginIcon i {font-size: 5em;  margin-bottom: 20px;}
+.loginIcon p {}
+.loginIcon i , .loginIcon p{
+  display: block;
+}
+.resetPwd {color: #fff}
+.btnForm .btn { margin: 0 10px;}
+</style>
+  </head>
+  <body class="login">
+    <div class="container col-xs-6 col-xs-offset-3">
+      <div class="loginIcon">
+        <i class="glyphicon glyphicon-map-marker"></i>
+        <!-- <p>欢迎登录</p> -->
+      </div>
+      <form class="form-horizontal theform">
+        <div class="form-group">
+          <label for="count" class="col-sm-2 control-label">账号</label>
+          <div class="col-sm-8">
+            <input type="email" class="form-control" id="count" placeholder="...">
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="inputPassword" class="col-sm-2 control-label">密码</label>
+          <div class="col-sm-8">
+            <input type="password" class="form-control" id="inputPassword" placeholder="...">
+          </div>
+        </div>
+        <!-- 记住我 -->
+        <!-- <div class="form-group">
+          <div class="col-sm-offset-2 col-sm-10">
+            <div class="checkbox">
+              <label>
+                <input type="checkbox"> Remember me
+              </label>
+            </div>
+          </div>
+        </div> -->
+        <div class="form-group text-center btnForm">
+          <div class="">
+            <a class="btn btn-success" href="index.html"><i class="glyphicon glyphicon-user"></i>登录</button>
+            <a class="resetPwd">重设密码</a>
+          </div>
+        </div>
+      </form>
+    </div>
+
+    <script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/dialog.js" charset="utf-8"></script>
+    <script type="text/html" class="resetPWD">
+      <form class="form-horizontal theform">
+        <div class="form-group">
+          <label for="count" class="col-sm-2 control-label">原密码</label>
+          <div class="col-sm-8">
+            <input type="email" class="form-control" id="count" placeholder="...">
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="inputPassword" class="col-sm-2 control-label">新密码</label>
+          <div class="col-sm-8">
+            <input type="password" class="form-control" id="inputPassword" placeholder="...">
+          </div>
+        </div>
+        <div class="form-group text-center btnForm">
+          <div class="">
+            <button type="submit" class="btn btn-success"><i class="glyphicon glyphicon-ok"></i>确认</button>
+          </div>
+        </div>
+      </form>
+    </script>
+    <script type="text/javascript">
+      $(".resetPwd").click(function(){
+        var formContent = $(".resetPWD").html();
+        $(".theform").html(formContent);
+      })
+    </script>
+  </body>
+</html>

@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>申请清单</title>
+
+    <!-- Bootstrap -->
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/screen.css" rel="stylesheet">
+
+    <!--[if lt IE 9]>
+      <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+  <body class="home-template">
+    <header class="main-header">
+      <div class="container">
+        <div class="row">
+          <div class="col-xs-12">
+            <h1>办公用品申购/评分</h1>
+            <a class="btn btn-primary" href="../login.html"><i class="glyphicon glyphicon-user"></i>登录</a>
+            <a class="btn btn-primary" herf="javascript:;"><i class="glyphicon glyphicon-globe"></i>退出</a>
+          </div>
+
+        </div>
+      </div>
+    </header>
+
+    <nav class="navbar my-navbar main-navigation" role="navigation">
+        <div class="container-fluid">
+            <div class="navbar-default navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-menu">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">菜单</a>
+            </div>
+            <div class="collapse navbar-collapse" id="main-menu">
+              <ul class="menu">
+                <li role="presentation"><a href="../index.html" title=" ">申请购买 </a></li>
+                <li role="presentation" class="active"><a href="./shopList.html" title=" ">申请清单 </a></li>
+                <li role="presentation"><a href="./score.html" title=" ">评分 </a></li>
+                <li role="presentation"> | </li>
+                <li role="presentation"><a href="../manager/setUp.html" title=" ">商品管理 </a></li>
+                <li role="presentation"><a href="../manager/shopList.html" title=" ">清单查看 </a></li>
+                <li role="presentation"><a href="../manager/scoreCheck.html" title=" ">评分查看 </a></li>
+                <li role="presentation"><a href="../manager/account.html" title=" ">账户管理 </a></li>
+              </ul>
+            </div>
+        </div>
+    </nav>
+
+    <section class="content-wrap">
+      <div class="container">
+      	<div class="row">
+          <div class="col-md-9 main-content contentRight">
+            <div class="panel panel-default">
+              <!-- Default panel contents -->
+              <div class="panel-heading">2017-07</div>
+              <div class="panel-body">
+                <button type="button" class="btn btn-primary pull-right col-xs-offset-1 TJ"><i class="glyphicon glyphicon-ok"></i>确认清单</button>
+              </div>
+              <table class="table  table-striped table-hover">
+                  <thead class="bg-primary">
+                    <tr>
+                      <th>
+                        <label>
+                          <input type="checkbox">
+                        </label>
+                      </th>
+                      <th>商品</th>
+                      <th>单价</th>
+                      <th>数量</th>
+                      <th>截止日期</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>
+                        <label>
+                          <input type="checkbox">
+                        </label>
+                      </td>
+                      <td>A4复印纸</td>
+                      <td>108.00</td>
+                      <td>15</td>
+                      <td>2017-10-25</td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <label>
+                          <input type="checkbox">
+                        </label>
+                      </td>
+                      <td>N次贴 窄三条（76mm*25mm）</td>
+                      <td>4.60</td>
+                      <td>34</td>
+                      <td>2017-10-25</td>
+                    </tr>
+                  </tbody>
+              </table>
+              <div class="panel-footer">
+                <i class="pull-left">更新时间：2017-08-16 15:33</i>
+                <ul class="pagination">
+                    <li>
+                      <a href="#" aria-label="Previous">
+                        <span aria-hidden="true">&laquo;</span>
+                      </a>
+                    </li>
+                    <li><a href="#">1</a></li>
+                    <li><a href="#">2</a></li>
+                    <li><a href="#">3</a></li>
+                    <li><a href="#">4</a></li>
+                    <li><a href="#">5</a></li>
+                    <li>
+                      <a href="#" aria-label="Next">
+                        <span aria-hidden="true">&raquo;</span>
+                      </a>
+                    </li>
+                  </ul>
+              </div>
+            </div>
+          </div>
+          <aside class="col-md-3 sidebar">
+        		<div class="widget">
+        			<h4 class="title"><i class="glyphicon glyphicon-tasks text-primary"></i>申请列表</h4>
+        			<div class="content">
+                <div class="list-group">
+                  <a href="#" class="list-group-item active">
+                    <span class="badge bg-danger">1</span>
+                    2017-07
+                  </a>
+                  <a href="#" class="list-group-item">
+                    <span class="badge bg-danger">1</span>
+                    2017-03</a>
+                  <a href="#" class="list-group-item">2016-12</a>
+                  <a href="#" class="list-group-item">2016-09</a>
+                  <a href="#" class="list-group-item">2016-03</a>
+                  <a href="#" class="list-group-item">2016-01</a>
+                </div>
+              <div class="row">
+
+              </div>
+        			</div>
+        		</div>
+      		</aside>
+        </div>
+      </div>
+    </section>
+    <!-- Modal -->
+    <div class="modal fade myModel" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title" id="myModalLabel">提交申请</h4>
+          </div>
+          <div class="modal-body">
+            <ul class="list-group">
+              <li class="list-group-item"><span class="badge">14</span>A4复印纸</li>
+              <li class="list-group-item"><span class="badge">14</span>A4复印纸</li>
+              <li class="list-group-item"><span class="badge">14</span>A4复印纸</li>
+            </ul>
+          </div>
+          <div class="modal-footer">
+            <span class="pull-left">总计：<strong>3400</strong>元</span>
+            <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+            <button type="button" class="btn btn-primary">确定</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/dialog.js" charset="utf-8"></script>
+    <script type="text/javascript">
+      var model = new Modal({
+        title: '提示',
+        content: '确认提交',
+        width: 600,
+        buttons: [{
+                html: '<button type="button" class="btn btn-primary btn-ok">确定</button>',
+                selector: '.btn-ok',
+                callback: function(){
+                    //点击确定按钮的回调
+                    Alert({
+                         msg: '提交成功！',
+                         onOk: function(){
+
+                         }
+                     });
+                }
+            },{
+              html: '<button type="button" class="btn btn-default btn-cancel">取消</button>',
+              selector: '.btn-cancel',
+              callback: function(){
+                  //点击确定按钮的回调
+              }
+            }]
+      });
+
+      $(".TJ").click(function(){
+        model.open();
+      })
+    </script>
+  </body>
+</html>

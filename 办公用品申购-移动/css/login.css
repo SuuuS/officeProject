@@ -1,0 +1,63 @@
+
+.input{
+	width:80%;
+	margin:0 auto;
+}
+.input>input , .oInput>input{
+	width:85%;
+	height:40px;
+	line-height: 40px;
+	font-size: 14px;
+	/*border:none;*/
+	border: 1px solid #fff;
+	padding-left: 15%;
+	color: #fff;
+	margin-bottom:20px;
+	background:none;
+	border-radius: 45px;	
+	-webkit-border-radius: 45px;
+}
+.submit{
+	width:80%;
+	margin:0 auto;
+	background:#0e95d2;
+	border-radius: 5px;
+	-webkit-border-radius: 5px;
+	height:30px;
+	line-height: 30px;
+	text-align: center;
+	font-family: "微软雅黑","黑体","宋体";
+	margin-top: 20px;
+}
+.submit a , .reg a{color:#fff;}
+.reg{height:30px;line-height:30px; width:58%;margin: 0 auto;}
+.reg span {margin: 0 10px;}
+input::-webkit-input-placeholder{
+	color: #fff;
+	font-size: 14px;
+}
+.wjmm{float:right;margin-right:20%;color:#6D6D72;font-size: 14px;text-decoration: none;}
+label input{margin-right:5px;margin-top:-3px;float;left;vertical-align: middle;}
+label{color:#6D6D72;font-size: 14px;height:20px;}
+.welcom {
+	color: #fff;
+	text-align: center;
+	margin: 20px 0;
+	font-family: 'HZGB';
+	margin-top: 30%;
+}
+.welcom h1{
+	text-shadow: 2px 2px 5px #222222;
+	letter-spacing: 5px;
+	color: #fff;
+}
+.welcom p {color: #fff;}	
+.logo img{width: 50%;margin: 20px 0 20px 10px;}
+@font-face {
+	    font-family: HZGB;
+	    font-weight: normal;
+	    font-style: normal;
+	 	-webkit-font-smoothing: antialiased;
+	    src: url('../fonts/汉真广标.TTF') format('truetype');
+	}
+

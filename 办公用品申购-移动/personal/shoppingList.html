@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title></title>
+		
+		<link rel="stylesheet" href="../css/mui.min.css" />
+		<link rel="stylesheet" href="../css/common.css" />
+		<link rel="stylesheet" href="../css/mui.picker.min.css" />
+		<style>
+			html,
+			body {
+				height: 100%;
+				overflow: hidden;
+			}
+			.mui-bar {
+				-webkit-box-shadow: none;
+				box-shadow: none;
+			}
+			/*.mui-table-view-cell.mui-collapse .goodsNum {padding-right: 30px;}*/				
+			.mui-card-footer.upDate {color: #dd524d;}
+			
+			.mui-collapse> a.mui-navigate-right {
+			    padding-right: 40px !important;
+			}
+			.mui-table-view-cell .theList:first-child span:first-of-type {width: 40%;}
+			.mui-input-numbox {
+				height: 35px !important;
+			    width: 50% !important;
+			    margin: 0 !important;
+			}
+		</style>
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<h1 id='result' class="mui-title btn" data-options='{"type":"month"}' />选择日期</h1>
+			<a class="mui-btn mui-btn-link mui-pull-right mui-btn-blue mui-disabled"><i class="mui-icon mui-icon-refresh" style="color: #007aff;"></i>更新</a>
+		</header>
+		<div class="mui-content">
+			<div class="mui-card">
+				<ul class="mui-table-view">
+					<li class="mui-table-view-cell ">
+						<div class="theList">
+							<span class="goods">计算器 卡西欧</span>
+							<span class="price">68.00</span>
+							<b class="goodsNum">×15</b>
+						</div>
+						<!--<div class="theList changeN">
+							<div class="mui-numbox">
+								<button class="mui-btn mui-btn-numbox-minus" type="button">-</button>
+								<input class="mui-input-numbox" type="number" />
+								<button class="mui-btn mui-btn-numbox-plus" type="button">+</button>
+							</div>
+							<button type="button" class="mui-btn mui-btn-primary mui-pull-right ediBtn">更改</button>
+						</div>-->
+					</li>
+					<li class="mui-table-view-cell">
+						<div class="theList">
+							<span class="goods">单页夹 （L透明）</span>
+							<span class="price">1.00</span>
+							<b class="goodsNum">×5</b>
+						</div>
+						
+					</li>
+				</ul>
+				<div class="mui-card-footer upDate">
+					更新于2017-06-01 16:33
+				</div><div class="mui-card-footer">
+					<button class="mui-btn mui-btn-danger XG" id="reSet">修改</button>
+					<p>共计<b class="totalPrice">1025.00</b>元</p>
+					<button class="mui-btn mui-btn-green oDone">确认清单</button>
+				</div>
+			</div>
+			
+		</div>
+		<script src="../js/mui.min.js"></script>
+		<script src="../js/mui.picker.min.js" ></script>
+		<script src="../js/jquery.min.js"></script>
+		<script type="text/javascript" charset="utf-8">
+			(function($) {
+				$.init();
+				$(".mui-card-footer").on("tap",".oDone",function(){
+					var btnArray = ['是', '否'];
+					$.confirm('确认清单？', '提示', btnArray, function(e) {
+						if (e.index == 0) {
+							mui.toast('确认成功');
+						} else {
+							
+						}
+					})
+				})
+				
+				//编辑
+				mui('.mui-card-footer').on('tap', '.XG', function(event) {
+				
+					XG();
+					event.stopPropagation();  
+				});
+				mui('.mui-card-footer').on('tap', '.QR', function(event) {
+				
+					QR();
+					event.stopPropagation();  
+				});
+			
+			mui('.mui-content .mui-switch').each(function() { //循环所有toggle
+				//toggle.classList.contains('mui-active') 可识别该toggle的开关状态
+				this.parentNode.querySelector('span').innerText = '状态：' + (this.classList.contains('mui-active') ? 'true' : 'false');
+				/**
+				 * toggle 事件监听
+				 */
+				this.addEventListener('toggle', function(event) {
+					//event.detail.isActive 可直接获取当前状态
+					this.parentNode.querySelector('span').innerText = '状态：' + (event.detail.isActive ? 'true' : 'false');
+				});
+			});
+			
+//				this.parentNode.querySelector('span').innerText = '状态：' + (this.classList.contains('mui-active') ? 'true' : 'false');
+		
+		
+				//日期选择
+				var result = $('#result')[0];
+				var btns = $('.btn');
+				btns.each(function(i, btn) {
+					btn.addEventListener('tap', function() {
+						var optionsJson = this.getAttribute('data-options') || '{}';
+						var options = JSON.parse(optionsJson);
+						var id = this.getAttribute('id');
+						/*
+						 * 首次显示时实例化组件
+						 * 示例为了简洁，将 options 放在了按钮的 dom 上
+						 * 也可以直接通过代码声明 optinos 用于实例化 DtPicker
+						 */
+						var picker = new $.DtPicker(options);
+						picker.show(function(rs) {
+							/*
+							 * rs.value 拼合后的 value
+							 * rs.text 拼合后的 text
+							 * rs.y 年，可以通过 rs.y.vaue 和 rs.y.text 获取值和文本
+							 * rs.m 月，用法同年
+							 * rs.d 日，用法同年
+							 * rs.h 时，用法同年
+							 * rs.i 分（minutes 的第二个字母），用法同年
+							 */
+							result.innerText = '日期: ' + rs.text;
+							/* 
+							 * 返回 false 可以阻止选择框的关闭
+							 * return false;
+							 */
+							/*
+							 * 释放组件资源，释放后将将不能再操作组件
+							 * 通常情况下，不需要示放组件，new DtPicker(options) 后，可以一直使用。
+							 * 当前示例，因为内容较多，如不进行资原释放，在某些设备上会较慢。
+							 * 所以每次用完便立即调用 dispose 进行释放，下次用时再创建新实例。
+							 */
+							picker.dispose();
+						});
+					}, false);
+				});
+		
+				
+			})(mui);
+
+			//编辑价格
+			function XG(){
+				$(".price, .goodsNum").hide();
+				var changeN ='<div class="theList changeN">'
+								+'<div class="mui-numbox">'
+									+'<button class="mui-btn mui-btn-numbox-minus" type="button">-</button>'
+									+'<input class="mui-input-numbox" type="number" />'
+									+'<button class="mui-btn mui-btn-numbox-plus" type="button">+</button>'
+								+'</div>'
+								+'<button type="button" class="mui-btn mui-btn-primary mui-pull-right ediBtn">'
+									+'更改'
+								+'</button>'
+							+'</div>';
+				if( document.querySelector(".changeN") != null){
+						//判断是否已添加
+						//	alert("已存在")
+					}else{
+						$(".mui-table-view-cell").append(changeN);
+					}	
+				if($("#reSet").is('.XG')){
+					$("#reSet").removeClass("XG").addClass("QR");
+					$("#reSet").text('确认修改');
+				}else{					
+					$("#reSet").removeClass("QR").addClass("XG");
+					$("#reSet").text('修改');
+				};
+			}
+			
+			//确定更改
+			function QR(){
+				$(".changeN").remove();				
+				$(".price, .goodsNum").show();
+				
+				if($("#reSet").is('.XG')){
+					$("#reSet").removeClass("XG").addClass("QR");
+					$("#reSet").text('确认修改');
+				}else{					
+					$("#reSet").removeClass("QR").addClass("XG");
+					$("#reSet").text('修改');
+				};
+			}
+
+
+
+		</script>
+	</body>
+
+</html>

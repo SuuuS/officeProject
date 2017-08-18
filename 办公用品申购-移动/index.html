@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <title></title>
+    <script src="js/mui.min.js"></script>
+    <link href="css/mui.min.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="css/common.css" />
+    <script type="text/javascript" charset="utf-8">
+      	mui.init();
+    </script>
+    <style>
+    	.headInfo {
+		    height: 100px;
+		    padding: 0 10px;
+		    background: #fff;
+    	}
+    	.headInfo .mui-table-view {height: 95px;}
+    	.headInfo .userName {
+    		font-size: 18px;
+		    line-height: 100px;
+		    font-weight: bold;
+    	}
+    	.headInfo .userName , .headInfo .score {display: inline-block;}
+    	.headInfo .score {    
+    		vertical-align: bottom;
+    		padding-bottom: 25px;
+    	}    
+    	.mui-content .mui-table-view.mui-grid-9{background-color:#fff !important;}
+ 		.mui-grid-view.mui-grid-9 .mui-table-view-cell {
+		    border-right: 1px solid;
+		    border-bottom: 1px solid;
+		   border-image: -webkit-gradient( #a0f0bb, #66a5e3) 30 30;
+			border-image: -moz-linear-gradient( #a0f0bb, #66a5e3) 30 30;
+			border-image: linear-gradient( #a0f0bb, #66a5e3) 30 30;
+		    
+		    /*background: -webkit-gradient(linear, left, right bottom, color-stop(0%,#a0f0bb), color-stop(100%,#66a5e3));
+		    background: -webkit-linear-gradient(left top, #a0f0bb 0%,#66a5e3 100%);
+		    background: linear-gradient(bottom, #a0f0bb 0%,#66a5e3 100%);*/
+
+		}
+    </style>
+</head>
+<body class="white">
+	 <div class="index" data-role="page" id="index">
+	 	<header class="headInfo">
+	 		<div class="mui-table mui-col-xs-12">
+	 			<h3 class="userName mui-table-cell mui-col-xs-5">农夫山泉</h3>
+	 			<div class="score mui-table-cell mui-col-xs-6 mui-text-left">
+	 				<p>个人评分：<b>100分</b><small>共<b>30</b>人评分</small></p>
+	 				<p>您已评价<b>25</b>人<small>(共50人)</small></p>
+	 			</div>
+	 		</div>	 			 		
+	 	</header>
+	 	<div class="mui-content">
+		        <ul class="mui-table-view mui-grid-view mui-grid-9">
+		            <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3"><a href="personal/buyDetail.html">
+		                    <span class="mui-icon mui-icon-home"></span>
+		                    <div class="mui-media-body">申请购买</div></a></li>
+		            <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3"><a href="personal/theshoppingList.html">
+		                    <span class="mui-icon mui-icon-chatbubble"></span>
+		                    <div class="mui-media-body">申请历史</div></a></li>
+		            <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3"><a href="personal/shoppingList.html">
+		                    <span class="mui-icon mui-icon-phone"></span>
+		                    <div class="mui-media-body">申请清单</div></a></li>
+		           	<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3"><a href="personal/receive.html">
+		                    <span class="mui-icon mui-icon-search"><span class="mui-badge">1</span></span>
+		                    <div class="mui-media-body">领取</div></a></li>
+		           <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3"><a href="personal/goScore.html">
+		                    <span class="mui-icon mui-icon-star"></span>
+		                    <div class="mui-media-body">评分</div></a></li>
+		        </ul> 
+				<h5 class="mui-content-padded"></h5>		        
+		        <ul class="mui-table-view">
+			        <li class="mui-table-view-cell">
+			        	<div class="mui-table">
+							<div class="mui-table-cell mui-col-sm-7">
+								<span>消费总金额</span>
+							</div>
+							<div class="mui-table-cell mui-col-sm-5 mui-text-right">
+								<b>2333.00</b>元
+							</div>
+						</div>	
+			        </li>
+				</ul>
+				<h5 class="mui-content-padded">管理</h5>
+		        
+		        <ul class="mui-table-view mui-grid-view mui-grid-9">
+		            <!--<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3"><a href="managers/theshoppingList.html">
+		                    <span class="mui-icon mui-icon-chatbubble"></span>
+		                    <div class="mui-media-body">购货历史</div></a></li>-->
+		            <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3"><a href="managers/theshoppingList.html">
+		                    <span class="mui-icon mui-icon-phone"></span>
+		                    <div class="mui-media-body">购货清单</div></a></li>
+		             <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3"><a href="managers/receive.html">
+		                    <span class="mui-icon mui-icon-search"><span class="mui-badge">1</span></span>
+		                    <div class="mui-media-body">取货</div></a></li>		            
+		            <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3"><a href="managers/goodsChange.html">
+		                    <span class="mui-icon mui-icon-gear"></span>
+		                    <div class="mui-media-body">商品管理</div></a></li>
+		        	<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3"><a href="managers/scoreDetail.html">
+		                    <span class="mui-icon mui-icon-location"></span>
+		                    <div class="mui-media-body">评分查看</div></a></li>
+		           
+		        </ul> 
+		
+		<h5 class="mui-content-padded"></h5>
+		<ul class="mui-table-view">
+	        <li class="mui-table-view-cell">
+	        	<div class="mui-table">
+					<div class="mui-table-cell mui-col-sm-7">
+						<span>消费总金额</span>
+					</div>
+					<div class="mui-table-cell mui-col-sm-5 mui-text-right">
+						<b>22643.00</b>元
+					</div>
+				</div>	
+	        </li>
+		</ul>
+		</div>
+	 </div>
+	 <script>	
+	 //	mui.ready(function(){
+//		 	mui("#index").on('tap','#buyDetail',function(){
+//			 	mui.openWindow({
+//				    id:'buyDetail',
+//				    url:'./buyDetail.html',
+//				    waiting:{
+//				      autoShow:true,//自动显示等待框，默认为true
+//				      title:'正在加载...'//等待对话框上显示的提示内容
+//				    }
+//				}) 
+//			}) 
+//			mui("#index").on('tap','#goBuy',function(){
+//			 	mui.openWindow({
+////				    id:'buyDetail',
+//				    url:'./buyDetail.html',
+//				    waiting:{
+//				      autoShow:true,//自动显示等待框，默认为true
+//				      title:'正在加载...'//等待对话框上显示的提示内容
+//				    }
+//				}) 
+//			})
+//			mui("#index").on('tap','#goodsChange',function(){
+//			 	mui.openWindow({
+////				    id:'buyDetail',
+//				    url:'./goodsChange.html',
+//				    waiting:{
+//				      autoShow:true,//自动显示等待框，默认为true
+//				      title:'正在加载...'//等待对话框上显示的提示内容
+//				    }
+//				}) 
+//			})
+////			mui("#index").on('tap','#scoreDetail',function(){
+////			 	mui.openWindow({
+////				    id:'scoreDetail',
+////				    url:'./scoreDetail.html',
+////				    waiting:{
+////				      autoShow:true,//自动显示等待框，默认为true
+////				      title:'正在加载...'//等待对话框上显示的提示内容
+////				    }
+////				}) 
+////			}) 
+//			mui("#index").on('tap','#checkDetail',function(){
+//			 	mui.openWindow({
+////				    id:'scoreDetail',
+//				    url:'./scoreDetail.html',
+//				    waiting:{
+//				      autoShow:true,//自动显示等待框，默认为true
+//				      title:'正在加载...'//等待对话框上显示的提示内容
+//				    }
+//				}) 
+//			})
+//			mui("#index").on('tap','#goScore',function(){
+//			 	mui.openWindow({
+////				    id:'scoreDetail',
+//				    url:'./goScore.html',
+//				    waiting:{
+//				      autoShow:true,//自动显示等待框，默认为true
+//				      title:'正在加载...'//等待对话框上显示的提示内容
+//				    }
+//				}) 
+//			})
+//			
+//	 	})
+//	 	
+	 </script>
+</body>
+</html>

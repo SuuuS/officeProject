@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>商品管理</title>
+
+    <!-- Bootstrap -->
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/screen.css" rel="stylesheet">
+
+    <!--[if lt IE 9]>
+      <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+  </head>
+  <body class="home-template">
+    <header class="main-header">
+      <div class="container">
+        <div class="row">
+          <div class="col-xs-12">
+            <h1>办公用品申购/评分</h1>
+            <a class="btn btn-primary" href="../login.html"><i class="glyphicon glyphicon-user"></i>登录</a>
+            <a class="btn btn-primary" herf="javascript:;"><i class="glyphicon glyphicon-globe"></i>退出</a>
+          </div>
+
+        </div>
+      </div>
+    </header>
+
+    <nav class="navbar my-navbar main-navigation" role="navigation">
+        <div class="container-fluid">
+            <div class="navbar-default navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-menu">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">菜单</a>
+            </div>
+            <div class="collapse navbar-collapse" id="main-menu">
+              <ul class="menu">
+                <li role="presentation"><a href="../index.html" title=" ">申请购买 </a></li>
+                <li role="presentation"><a href="../personal/shopList.html" title=" ">申请清单 </a></li>
+                <li role="presentation"><a href="../personal/score.html" title=" ">评分 </a></li>
+                <li role="presentation"> | </li>
+                <li role="presentation"><a href="./setUp.html" title=" ">商品管理 </a></li>
+                <li role="presentation"><a href="./shopList.html" title=" ">清单查看 </a></li>
+                <li role="presentation"><a href="./scoreCheck.html" title=" ">评分查看 </a></li>
+                <li role="presentation" class="active"><a href="./account.html" title=" ">账户管理 </a></li>
+              </ul>
+            </div>
+        </div>
+    </nav>
+    <section class="content-wrap">
+      <div class="container">
+      	<div class="row">
+          <div class="col-md-9 main-content contentRight">
+            <div class="panel panel-default">
+              <div class="panel-heading">
+                <div class="input-group col-md-8">
+                  <input type="text" class="form-control" placeholder="输入员工名称...">
+                  <span class="input-group-btn">
+                    <button class="btn btn-default" type="button"><i class="glyphicon glyphicon-search"></i>搜索</button>
+                  </span>
+                </div>
+              </div>
+              <div class="panel-body">
+                <!-- <div class="form-inline pull-left">
+                  <div class="form-group">
+                    <label for="exampleInputEmail1">修改截止日期</label>
+                    <input type="text" class="form-control" placeholder="选择日期">
+                  </div>
+                </div> -->
+                <!-- <button type="button" class="btn btn-primary pull-right offset-1"><i class="glyphicon glyphicon-ok"></i>提交</button> -->
+                <button type="button" class="btn btn-primary pull-right offset-1 resetInfo"><i class="glyphicon glyphicon-th-list"></i>修改信息</button>
+                <!-- <button type="button" class="btn btn-danger pull-right"><i class="glyphicon glyphicon-remove"></i>批量删除</button> -->
+              </div>
+              <!-- Table -->
+              <table class="table  table-striped table-hover">
+                  <thead class="bg-primary">
+                    <tr>
+                      <th>
+                        <label>
+                          <input type="checkbox">
+                        </label>
+                      </th>
+                      <th>姓名</th>
+                      <th>账号</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>
+                        <label>
+                          <input type="checkbox">
+                        </label>
+                      </td>
+                      <td>徐天</td>
+                      <td>170801</td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <label>
+                          <input type="checkbox">
+                        </label>
+                      </td>
+                      <td>陈理</td>
+                      <td>170802</td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <label>
+                          <input type="checkbox">
+                        </label>
+                      </td>
+                      <td>陈理</td>
+                      <td>170802</td>
+                    </tr>
+                  </tbody>
+              </table>
+              <div class="panel-footer">
+                <i class="pull-left">更新时间：2017-08-16 15:33</i>
+                <ul class="pagination">
+                    <li>
+                      <a href="#" aria-label="Previous">
+                        <span aria-hidden="true">&laquo;</span>
+                      </a>
+                    </li>
+                    <li><a href="#">1</a></li>
+                    <li><a href="#">2</a></li>
+                    <li><a href="#">3</a></li>
+                    <li><a href="#">4</a></li>
+                    <li><a href="#">5</a></li>
+                    <li>
+                      <a href="#" aria-label="Next">
+                        <span aria-hidden="true">&raquo;</span>
+                      </a>
+                    </li>
+                  </ul>
+              </div>
+            </div>
+          </div>
+          <aside class="col-md-3 sidebar">
+        		<div class="widget">
+        			<h4 class="title"><i class="glyphicon glyphicon-grain text-primary"></i>账号管理</h4>
+        			<div class="content">
+                <a href="javascript:;" class="btn btn-success btn-block addInfo"><i class="glyphicon glyphicon-plus"></i>新增账号</a>
+        				<!-- <a href="javascript:;" class="btn btn-success btn-block" onclick=""><i class="glyphicon glyphicon-refresh"></i>更新</a> -->
+        			</div>
+        		</div>
+      		</aside>
+        </div>
+      </div>
+    </section>
+    <!-- 新增账号 -->
+    <script type="text/html" id="addInfo">
+      <form>
+          <div class="form-group">
+              <label>姓名</label>
+              <input type="text" class="form-control" name="Name" placeholder="姓名">
+          </div>
+          <div class="form-group">
+              <label>账号</label>
+              <input type="number" class="form-control" name="Count" placeholder="账号">
+          </div>
+          <div class="form-group">
+              <label>密码</label>
+              <input type="password" class="form-control" name="Password" placeholder="密码">
+          </div>
+      </form>
+    </script>
+
+
+    <script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/dialog.js"></script>
+    <script type="text/javascript">
+    // 新增信息
+    var modal = new Modal({
+        title: '新增账号',
+        content: $('#addInfo').html(),
+        width: 500,
+        onOk: function(){
+            var $form = this.$modal.find('form');
+            var data = $form.serializeArray();
+            var postData = {};
+            data.forEach(function(obj){
+               postData[obj.name] = obj.value;
+            });
+
+            var deferred = $.Deferred();
+
+            if(!postData.Name || !postData.Count || !postData.Password) {
+                Alert(' 请填写所有信息!');
+                return false;
+            }else {
+                Alert({
+                    msg: '新增成功！',
+                    onOk: function(){
+                        deferred.resolve();
+                    }
+                });
+            }
+            return $.when(deferred);
+        },
+        onModalShow: function () {
+            var $form = this.$modal.find('form');
+            $form[0].reset();
+        }
+    });
+    // 新增账号
+    $('.addInfo').click(function () {
+        modal.open();
+    });
+    $('.resetInfo').click(function () {
+        modal.open();
+    });
+
+    </script>
+  </body>
+</html>

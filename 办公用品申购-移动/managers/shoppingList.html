@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title></title>
+		
+		<link rel="stylesheet" href="../css/mui.min.css"  />
+		<link rel="stylesheet" href="../css/common.css" />
+		<link rel="stylesheet" href="../css/mui.picker.min.css" />
+		<style>
+			html,
+			body {
+				height: 100%;
+				overflow: hidden;
+			}
+			.mui-bar {
+				-webkit-box-shadow: none;
+				box-shadow: none;
+			}
+			/*.mui-table-view-cell.mui-collapse .goodsNum {padding-right: 30px;}*/				
+			.mui-card-footer.upDate {color: #dd524d;}
+			
+			.mui-collapse> a.mui-navigate-right {
+			    padding-right: 40px !important;
+			}
+		</style>
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<h1 id='result' class="mui-title btn" data-options='{"type":"month"}' />选择日期</h1>
+			<a class="mui-btn mui-btn-link mui-pull-right mui-btn-blue mui-disabled"><i class="mui-icon mui-icon-refresh" style="color: #007aff;"></i>更新</a>
+		</header>
+		<div class="mui-content">
+			<div class="mui-card">
+				<ul class="mui-table-view">
+					<li class="mui-table-view-cell mui-collapse">
+						<a class="mui-navigate-right" href="#">
+							<div class="theList">
+								<span>计算器 卡西欧</span>
+								<span>68.00</span>
+								<b>×15</b>
+							</div>
+						</a>
+						<ul class="mui-table-view mui-table-view-chevron">
+							<li class="mui-table-view-cell theList">
+								<span>王潇</span>
+								<b>×5</b>
+							</li>
+							<li class="mui-table-view-cell theList">
+								<span>徐天</span>
+								<b>×3</b>
+							</li>
+							<li class="mui-table-view-cell theList">
+								<span>牟庭</span>
+								<b>×7</b>
+							</li>
+						</ul>
+					</li>
+					<li class="mui-table-view-cell mui-collapse">
+						<a class="mui-navigate-right" href="#">
+							<div class="theList">
+								<span>单页夹 （L透明）</span>
+								<span>1.00</span>
+								<b>×5</b>
+							</div>
+						</a>
+						<ul class="mui-table-view mui-table-view-chevron">
+							<li class="mui-table-view-cell theList">
+								<span>徐婷</span>
+								<b>×4</b>
+							</li>
+							<li class="mui-table-view-cell theList">
+								<span>艾勒</span>
+								<b>×1</b>
+							</li>
+						</ul>
+					</li>
+				</ul>
+				<div class="mui-card-footer upDate">
+					更新于2017-06-01 16:33
+				</div><div class="mui-card-footer">
+					<!--<button class="mui-btn mui-btn-danger">修改</button>-->
+					<b>20件</b>
+					<p>共计<b class="totalPrice">1025.00</b>元</p>
+					<button class="mui-btn mui-btn-green oDone">确认清单</button>
+				</div>
+			</div>
+			
+		</div>
+		<script src="../js/mui.min.js"></script>
+		<script src="../js/mui.picker.min.js" ></script>
+		
+		<script type="text/javascript" charset="utf-8">
+			(function($) {
+				$.init();
+				$(".mui-card-footer").on("tap",".oDone",function(){
+					var btnArray = ['是', '否'];
+					$.confirm('确认清单？', '提示', btnArray, function(e) {
+						if (e.index == 0) {
+							mui.toast('确认成功');
+//							setTimeout(function(){
+//								mui.openWindow({						
+//									url:'../index.html',
+//									id:'index',							
+//									waiting:{
+//								      autoShow:true,//自动显示等待框，默认为true
+//								      title:'正在加载...'//等待对话框上显示的提示内容
+//								    }
+//								})
+//							},2500);
+						} else {
+//							info.innerText = 'MUI没有得到你的认可，继续加油'
+						}
+					})
+				})
+				var result = $('#result')[0];
+				var btns = $('.btn');
+				btns.each(function(i, btn) {
+					btn.addEventListener('tap', function() {
+						var optionsJson = this.getAttribute('data-options') || '{}';
+						var options = JSON.parse(optionsJson);
+						var id = this.getAttribute('id');
+						/*
+						 * 首次显示时实例化组件
+						 * 示例为了简洁，将 options 放在了按钮的 dom 上
+						 * 也可以直接通过代码声明 optinos 用于实例化 DtPicker
+						 */
+						var picker = new $.DtPicker(options);
+						picker.show(function(rs) {
+							/*
+							 * rs.value 拼合后的 value
+							 * rs.text 拼合后的 text
+							 * rs.y 年，可以通过 rs.y.vaue 和 rs.y.text 获取值和文本
+							 * rs.m 月，用法同年
+							 * rs.d 日，用法同年
+							 * rs.h 时，用法同年
+							 * rs.i 分（minutes 的第二个字母），用法同年
+							 */
+							result.innerText = '日期: ' + rs.text;
+							/* 
+							 * 返回 false 可以阻止选择框的关闭
+							 * return false;
+							 */
+							/*
+							 * 释放组件资源，释放后将将不能再操作组件
+							 * 通常情况下，不需要示放组件，new DtPicker(options) 后，可以一直使用。
+							 * 当前示例，因为内容较多，如不进行资原释放，在某些设备上会较慢。
+							 * 所以每次用完便立即调用 dispose 进行释放，下次用时再创建新实例。
+							 */
+							picker.dispose();
+						});
+					}, false);
+				});
+			})(mui);
+		
+		</script>
+	</body>
+
+</html>
